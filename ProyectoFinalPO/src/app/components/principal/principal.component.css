@@ -1,6 +1,21 @@
-.row{
-    padding: 15px;
+
+#datos{
+    padding: 30px;
     background-color: #C4A484;
+    border-color: black;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-width: thick;
+    margin: 0px 10px 10px 10px;
+}
+
+#acercade{
+    padding: 30px;
+    background-color: #C4A484;
+    border-radius: 5%;
+    border-color: black;
+    border-width: thick;
+    margin: 10px 10px 10px 10px;
 }
 
 #fotoperfil{

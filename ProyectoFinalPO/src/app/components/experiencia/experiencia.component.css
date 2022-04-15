@@ -1,8 +1,26 @@
 .row{
     padding: 30px;
     background-color: #C4A484;
+    border-radius: 5%;
+    border-color: black;
+    border-width: thick;
+    margin: 10px 10px 10px 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+.empresa{
+    display: flex;
+}
+
+.empresaflex{
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
-    width: 45px;
+    width: 80px;
 }
