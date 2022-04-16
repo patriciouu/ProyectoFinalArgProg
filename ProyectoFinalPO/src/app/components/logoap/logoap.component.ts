@@ -12,4 +12,9 @@ export class LogoapComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//   abrirModal(){
+//   $("#exampleModalCenter").modal("show");
+// }
+
+
 }
