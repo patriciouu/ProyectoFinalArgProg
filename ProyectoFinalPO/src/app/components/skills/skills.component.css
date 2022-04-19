@@ -11,6 +11,10 @@ ul{
     list-style: none;
 }
 
-li{
-    display: inline;
+.item{
+    display: flex;
+}
+
+svg{
+    margin-left: 15px;
 }

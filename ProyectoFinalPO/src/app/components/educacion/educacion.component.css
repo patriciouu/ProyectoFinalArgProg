@@ -11,16 +11,20 @@ ul{
     list-style: none;
 }
 
-.empresa{
+.item{
     display: flex;
+    justify-content: space-between;
 }
 
 .empresaflex{
     margin: 10px;
-    justify-content: center;
-    align-items: center;
+    display: flex;
 }
 
 img{
     width: 80px;
+}
+
+svg{
+    margin-left: 30px;
 }

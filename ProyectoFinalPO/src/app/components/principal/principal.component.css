@@ -16,6 +16,8 @@
     border-color: black;
     border-width: thick;
     margin: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #fotoperfil{
