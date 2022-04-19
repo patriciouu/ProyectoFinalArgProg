@@ -1,105 +1,22 @@
 <div class="row">
     <h1>Habillidades</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skills of skillsList">
+        <div >
         <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [showTitle]="true"
-        [title]="'HTML'"
-        [titleFontSize]="'35px'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#4882c2'"
-        [innerStrokeColor]="'#e7e8ea'"
-        [animation]="true"
-        [animationDuration]="800"
-        ></circle-progress>
+            [showTitle]="true"
+            [title]="skills.habilidad"  
+            [titleFontSize]="'35px'"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [percent]="skills.porcentaje"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#4882c2'"
+            [innerStrokeColor]="'#e7e8ea'"
+            [animation]="true"
+            [animationDuration]="800"
+            ></circle-progress>
+        </div>
     </div>
 </div>

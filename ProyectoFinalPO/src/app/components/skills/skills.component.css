@@ -6,3 +6,11 @@
     border-width: thick;
     margin: 10px 10px 10px 10px;
 }
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline;
+}

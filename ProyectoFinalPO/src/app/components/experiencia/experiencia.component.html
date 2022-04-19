@@ -4,32 +4,18 @@
   </div>
   <div>
     <ul>
-      <li>
+      <li *ngFor="let experiencia of experienciaList">
         <div class="empresa">
-          <img class= "empresaflex" src="../../../assets/LogoGYT.jfif">
+          <img class= "empresaflex" [src]="experiencia.logo">
           <div><h3 class="empresaflex">
-            GEDYT SA
+            {{experiencia.empresa}}
             </h3>
             <p class="empresaflex">
-              2012 a la fecha
+              {{experiencia.periodo}}
             </p></div>
         </div>
         <p>
-          Analista de contabilidad y auditoría interna
-        </p>
-      </li>
-      <li>
-        <div class="empresa">
-          <img class= "empresaflex" src="../../../assets/LogoGYT.jfif">
-          <div><h3 class="empresaflex">
-            Dilog Oeste
-            </h3>
-            <p class="empresaflex">
-              2008 - 2012
-            </p></div>
-        </div>
-        <p>
-          Analista de contabilidad y auditoría interna
+          {{experiencia.puesto}}
         </p>
       </li>
     </ul>

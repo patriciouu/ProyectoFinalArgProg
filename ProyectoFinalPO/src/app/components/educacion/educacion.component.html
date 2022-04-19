@@ -4,36 +4,20 @@
     </div>
     <div>
         <ul>
-            <li>
+            <li *ngFor="let educacion of educacionList">
                 <div class="empresa">
-                    <img class="empresaflex" src="../../../assets/LogoGYT.jfif">
+                    <img class="empresaflex" [src]="educacion.logo">
                     <div>
                         <h3 class="empresaflex">
-                            UCES
+                            {{educacion.instituto}}
                         </h3>
                         <p class="empresaflex">
-                            2012 a la fecha
+                            {{educacion.periodo}}
                         </p>
                     </div>
                 </div>
                 <p>
-                    Carrera
-                </p>
-            </li>
-            <li>
-                <div class="empresa">
-                    <img class="empresaflex" src="../../../assets/LogoGYT.jfif">
-                    <div>
-                        <h3 class="empresaflex">
-                            Insituto
-                        </h3>
-                        <p class="empresaflex">
-                            Fecha
-                        </p>
-                    </div>
-                </div>
-                <p>
-                    Carrera
+                    {{educacion.carrera}}
                 </p>
             </li>
         </ul>
