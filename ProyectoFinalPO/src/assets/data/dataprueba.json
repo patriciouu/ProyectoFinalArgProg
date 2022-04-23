@@ -1,6 +1,6 @@
 {
-    "nombre": "Patricio",
-    "titulo": "Tratando...",
+    "nombre": "Patricio Oubiña",
+    "titulo": "Full Stack Developer Jr.",
     "experiencia": [
         {
             "empresa": "Gedyt SA",
@@ -79,5 +79,6 @@
             "habilidad": "Portfolio",
             "porcentaje": "85"
         }
-    ]
+    ],
+    "login": true
 }
