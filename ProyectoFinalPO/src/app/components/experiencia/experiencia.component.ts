@@ -9,7 +9,6 @@ import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 export class ExperienciaComponent implements OnInit {
 
   experienciaList:any;
-  miPortfolio:any;
 
   constructor(private portfolioServ:PortfolioServService) {}
 
@@ -19,9 +18,11 @@ export class ExperienciaComponent implements OnInit {
       console.log(data.experiencia);
     });
     
-    this.portfolioServ.obtenerDatos().subscribe(data =>{
-      this.miPortfolio = data;
-    })
+
+  }
+
+  eliminarExp(experiencia: any){
+    console.log(experiencia)
   }
 
 }

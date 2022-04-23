@@ -1,6 +1,9 @@
 {
-    "nombre": "Patricio Oubiña",
-    "titulo": "Full Stack Developer Jr.",
+
+            "id": 1,
+            "nombre": "Patricio Oubiña",
+            "titulo": "Full Stack Developer Jr.",
+            
     "experiencia": [
         {
             "empresa": "Gedyt SA",
@@ -23,18 +26,21 @@
     ],
     "educacion": [
         {
+            "educaciónid": "1",
             "instituto": "UCES",
             "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
             "periodo": "hasta 2016",
             "carrera": "Lic en administración"
         },
         {
+            "educaciónid": "2",
             "instituto": "UNLAM",
             "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
             "periodo": "2008 - 2012",
             "carrera": "Lic en administración"
         },
         {
+            "educaciónid": "3",
             "instituto": "Lucía",
             "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
             "periodo": "Pandemia",

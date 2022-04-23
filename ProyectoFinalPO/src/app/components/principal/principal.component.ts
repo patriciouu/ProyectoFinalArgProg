@@ -16,7 +16,7 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit(): void {
     this.portfolioServ.obtenerDatos().subscribe(data =>{
-      this.miPortfolio = data;
+      this.miPortfolio = data
     });
   }
   
