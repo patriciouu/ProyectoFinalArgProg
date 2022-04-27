@@ -7,7 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class PortfolioServService {
 
+  private apiUrl:string = "http://localhost:8080/"
+
   constructor(private http:HttpClient) { }
+
+  obtenerDatosAPI():Observable<any>{
+    return this.http.get(this.apiUrl);
+  }
 
   obtenerDatos():Observable<any>{
     return this.http.get('./assets/data/dataprueba.json');
