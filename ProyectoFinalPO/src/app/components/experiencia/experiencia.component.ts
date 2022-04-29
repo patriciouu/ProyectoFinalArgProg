@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
-import { ExperienciaserviceService } from 'src/app/services/experienciaservice.service';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 
 @Component({
@@ -10,25 +10,27 @@ import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 })
 export class ExperienciaComponent implements OnInit {
 
+  experiencia: Experiencia = new Experiencia;
   experienciaList!: Experiencia[]
 
 
-  // experienciaList:any;
-
-  constructor(private experienciaService:ExperienciaserviceService) {}
+  constructor(private experienciaService:ExperienciaService) {}
 
   ngOnInit(): void {
     
-    this.experienciaService.returnExperiencias().subscribe(
-      data => this.experienciaList = data
-    )
+      this.experienciaService.returnExperiencias().subscribe(
+        data => this.experienciaList = data
+      )
     
-    // this.portfolioServ.obtenerDatos().subscribe(data =>{
-    //   this.experienciaList = data.experiencia;
-    //   console.log(data.experiencia);
-    // });
-    
+  }
 
+  createExp():void{
+    console.log(this.experiencia);
+    this.experienciaService.createExperiencia(this.experiencia).subscribe(
+      data =>this.experienciaService.returnExperiencias().subscribe(
+        response=>this.experienciaList=response
+      )
+    )
   }
 
   eliminarExp(experiencia:Experiencia):void{
