@@ -15,8 +15,20 @@ export class EducacionServService {
 
   constructor(private http: HttpClient) { }
 
-  returnEducacion(){
-    this.http.get<Educacion[]>(this.urlEducacion);
+  returnEducacion(): Observable<Educacion[]>{
+    return this.http.get<Educacion[]>(this.urlEducacion);
+  }
+
+  createEducacion(educacion: Educacion): Observable<Educacion>{
+    return this.http.post<Educacion>(this.urlEducacion + "/create", educacion);
+  }
+
+  editEducacion(id:number, educacion: Educacion): Observable<Educacion>{
+    return this.http.put<Educacion>(this.urlEducacion + "/edit/" + id, educacion);
+  }
+
+  deleteEducacion(id: number): Observable<Educacion>{
+    return this.http.delete<Educacion>(this.urlEducacion + "/delete/" + id);
   }
 
 
