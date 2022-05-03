@@ -11,7 +11,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="expModalLabel">Agregar experiencia</h5>
+            <h5 class="modal-title" id="crearExpModalLabel">Agregar experiencia</h5>
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -20,29 +20,29 @@
             <form>
               <div class="form-group">
                 <label for="experienciaEmpresa" class="col-form-label">Empresa</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre de la empresa"
-                name="empresa" [(ngModel)]="experiencia.empresa" id="experienciaEmpresa">
+                <input type="text" class="form-control" placeholder="Ingrese nombre de la empresa" name="empresa"
+                  [(ngModel)]="experiencia.empresa" id="experienciaEmpresa">
               </div>
               <div class="form-group">
                 <label for="experienciaPeriodo" class="col-form-label">Periodo</label>
-                <input type="text" class="form-control" placeholder="Ingrese período de tiempo" 
-                 name="periodo" [(ngModel)]="experiencia.periodo" id="experienciaPeriodo">
+                <input type="text" class="form-control" placeholder="Ingrese período de tiempo" name="periodo"
+                  [(ngModel)]="experiencia.periodo" id="experienciaPeriodo">
               </div>
               <div class="form-group">
                 <label for="experienciaDescripcion" class="col-form-label">Descripción</label>
-                <input type="text" class="form-control" placeholder="Ingrese descripción del puesto"
-                name="puesto"  [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
+                <input type="text" class="form-control" placeholder="Ingrese descripción del puesto" name="puesto"
+                  [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
               </div>
               <div class="form-group">
                 <label for="experienciaLogo" class="col-form-label">Logo</label>
-                <input type="text" class="form-control" placeholder="Ingrese URL del logo" 
-                name="logoEmpresa"  [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
+                <input type="text" class="form-control" placeholder="Ingrese URL del logo" name="logoEmpresa"
+                  [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" (click)='createExp()'>Guardar</button>
+            <button type="button" class="btn btn-primary" (click)='createExp()' data-bs-dismiss="modal">Guardar</button>
           </div>
         </div>
       </div>
@@ -67,17 +67,20 @@
           </div>
           <div>
             <div class="iconsflex">
-              <svg type="button" data-bs-toggle="modal" data-bs-target="#expModal" xmlns="http://www.w3.org/2000/svg"
-                width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+              <svg type="button" data-bs-toggle="modal" [attr.data-bs-target]="'#editarExpModal-' + experiencia.idExperiencia"
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
+                viewBox="0 0 16 16"
+                (click)="onEdit(experiencia)"
+                >
                 <path
                   d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
               </svg>
-              <div class="modal fade" id="expModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+              <div class="modal fade" id="editarExpModal-{{experiencia.idExperiencia}}" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="expModalLabel">Editar experiencia</h5>
+                      <h5 class="modal-title" id="editarExpModalLabel">Editar experiencia</h5>
                       <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -87,28 +90,28 @@
                         <div class="form-group">
                           <label for="experienciaEmpresa" class="col-form-label">Empresa</label>
                           <input type="text" class="form-control" placeholder="Ingrese nombre de la empresa"
-                            id="experienciaEmpresa">
+                            name="empresa" [(ngModel)]="experiencia.empresa" id="experienciaEmpresa">
                         </div>
                         <div class="form-group">
                           <label for="experienciaPeriodo" class="col-form-label">Periodo</label>
-                          <input type="text" class="form-control" placeholder="Ingrese período de tiempo"
-                            id="experienciaPeriodo">
+                          <input type="text" class="form-control" placeholder="Ingrese período de tiempo" name="periodo"
+                            [(ngModel)]="experiencia.periodo" id="experienciaPeriodo">
                         </div>
                         <div class="form-group">
                           <label for="experienciaDescripcion" class="col-form-label">Descripción</label>
                           <input type="text" class="form-control" placeholder="Ingrese descripción del puesto"
-                            id="experienciaDescripcion">
+                            name="puesto" [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
                         </div>
                         <div class="form-group">
                           <label for="experienciaLogo" class="col-form-label">Logo</label>
-                          <input type="text" class="form-control" placeholder="Ingrese URL del logo"
-                            id="experienciaLogo">
+                          <input type="text" class="form-control" placeholder="Ingrese URL del logo" name="logoEmpresa"
+                            [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
                         </div>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      <button type="button" class="btn btn-primary">Guardar</button>
+                      <button type="button" class="btn btn-primary" (click)='editExp(experiencia)' data-bs-dismiss="modal">Editar</button>
                     </div>
                   </div>
                 </div>

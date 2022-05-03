@@ -17,7 +17,11 @@ export class ExperienciaService {
   }
 
   createExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>(this.urlExperiencia + "/create", experiencia)
+    return this.http.post<Experiencia>(this.urlExperiencia + "/create", experiencia);
+  }
+
+  editExperiencia(id:number, experiencia:Experiencia): Observable<Experiencia>{
+    return this.http.put<Experiencia>(this.urlExperiencia + "/edit/" + id, experiencia);
   }
 
 
