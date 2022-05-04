@@ -10,7 +10,7 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 export class ExperienciaComponent implements OnInit {
 
   experiencia: Experiencia = new Experiencia;
-  experienciaList!: Experiencia[]
+  experienciaList: Experiencia[] = []
 
 
   constructor(private experienciaService: ExperienciaService) { }

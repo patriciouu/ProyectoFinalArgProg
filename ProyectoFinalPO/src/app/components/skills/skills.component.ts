@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
+import { SkillServService } from 'src/app/services/skill-serv.service';
+import { Skill } from 'src/app/model/skill';
 
 @Component({
   selector: 'app-skills',
@@ -8,14 +9,43 @@ import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 })
 export class SkillsComponent implements OnInit {
 
-  skillsList:any;
+  skill: Skill = new Skill;
+  skillsList: Skill[] = [];
 
-  constructor(private portfolioServ:PortfolioServService) { }
+  constructor(private skillService:SkillServService) { }
 
   ngOnInit(): void {
-    this.portfolioServ.obtenerDatos().subscribe(data =>{
-      this.skillsList=data.skills;
-    })
+   this.skillService.returnSkills().subscribe(
+     data => this.skillsList = data
+   )
+  }
+
+  createSki(skill: Skill){
+    this.skillService.createSkill(skill).subscribe(
+      data => this.skillService.returnSkills().subscribe(
+        response => this.skillsList = response
+      )
+    )
+  }
+
+  onEdit(skill: Skill){
+    console.log(skill);
+  }
+
+  editSki(skill: Skill){
+    this.skillService.editSkill(skill.skillId, skill).subscribe(
+      data => this.skillService.returnSkills().subscribe(
+        response => this.skillsList = response
+      )
+    )
+  }
+
+  deleteSki(skill: Skill){
+    this.skillService.deleteSkill(skill.skillId).subscribe(
+      data => this.skillService.returnSkills().subscribe(
+        response => this.skillsList = response
+      )
+    )
   }
 
 }

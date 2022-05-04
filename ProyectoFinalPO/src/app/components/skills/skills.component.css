@@ -15,6 +15,11 @@ ul{
     display: flex;
 }
 
+.skillTitulo{
+    display: flex;
+    align-items: center;
+}
+
 svg{
     margin-left: 15px;
 }

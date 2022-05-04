@@ -32,7 +32,7 @@ export class EducacionComponent implements OnInit {
 
   onEdit(educacion: Educacion){
     const edu = educacion;
-    console.log(educacion);
+    console.log(edu);
   }
 
   editEdu(educacion:Educacion):void{

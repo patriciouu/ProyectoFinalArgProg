@@ -30,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EducacionComponent,
     ProyectosComponent,
     SkillsComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

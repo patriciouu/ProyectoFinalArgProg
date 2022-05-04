@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
+import { Persona } from 'src/app/model/persona';
+import { PersonaServService } from 'src/app/services/persona-serv.service';
+
 
 @Component({
   selector: 'app-principal',
@@ -8,16 +10,17 @@ import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 })
 export class PrincipalComponent implements OnInit {
 
-  miPortfolio: any;
+  personasList: Persona[] = [];
 
-  constructor(private portfolioServ:PortfolioServService) {
+   constructor(private personaService:PersonaServService) {
 
    }
 
   ngOnInit(): void {
-    this.portfolioServ.obtenerDatos().subscribe(data =>{
-      this.miPortfolio = data
-    });
+
+    this.personaService.returnPersonas().subscribe(
+      data => this.personasList=data
+    )
   }
   
   
