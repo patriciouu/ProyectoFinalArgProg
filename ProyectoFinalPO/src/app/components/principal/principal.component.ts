@@ -11,6 +11,7 @@ import { PersonaServService } from 'src/app/services/persona-serv.service';
 export class PrincipalComponent implements OnInit {
 
   personasList: Persona[] = [];
+  persona: Persona = new Persona;
 
    constructor(private personaService:PersonaServService) {
 
@@ -22,6 +23,18 @@ export class PrincipalComponent implements OnInit {
       data => this.personasList=data
     )
   }
+
+  onEdit(persona: Persona){
+    const perso = persona;
+    console.log(persona);
+  }
   
+  editPerso(persona: Persona){
+    this.personaService.editPersona(persona.id, persona).subscribe(
+      data => this.personaService.returnPersonas().subscribe(
+        response => this.personasList = response
+      )
+    )
+  }
   
 }
