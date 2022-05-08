@@ -1,5 +1,4 @@
-
-#datos{
+#datos {
     padding: 30px;
     background-color: #C4A484;
     border-color: black;
@@ -9,20 +8,28 @@
     margin: 0px 10px 10px 10px;
 }
 
-.nombre{
+.nombre {
     padding: 10px;
     text-align: center;
 }
 
-.acercade{
+.acercade {
     padding: 10px;
 }
 
+@media (min-width: 576px) {
+    #fotoperfil {
+        width: 100%;
+        border-radius: 100%;
+    }
+}
 
-#fotoperfil{
-    border-radius: 100%;
-    position: absolute;
-    width: 13%;
-    top: 680px;
-    left: 4%;
+@media (max-width: 575px) {
+    #fotoperfil {
+        width: 50%;
+        border-radius: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }
