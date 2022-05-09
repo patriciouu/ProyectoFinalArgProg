@@ -8,7 +8,7 @@ import { Skill } from '../model/skill';
 })
 export class SkillServService {
 
-  private urlSkills: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/skills"
+  private urlSkills: string = "http://localhost:8080/portfolio/skills"
 
   constructor(private http: HttpClient) { }
 
