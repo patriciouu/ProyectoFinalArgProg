@@ -11,7 +11,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class EducacionServService {
 
-  private urlEducacion = "http://localhost:8080/portfolio/educacion"
+  private urlEducacion = "https://quiet-reaches-10167.herokuapp.com/portfolio/educacion"
 
   constructor(private http: HttpClient) { }
 
