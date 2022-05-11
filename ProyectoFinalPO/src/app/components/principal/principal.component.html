@@ -9,7 +9,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editPersoImgModalLabel">Editar Habilidad</h5>
+            <h5 class="modal-title" id="editPersoImgModalLabel">Editar imagen</h5>
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -17,7 +17,7 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="personaHabilidad" class="col-form-label">Habilidad</label>
+                <label for="personaHabilidad" class="col-form-label">Imagen</label>
                 <input type="file" (change)="captureFile($event)"  class="form-control" placeholder="Seleccione imagen" name="personaFotoDePerfil"
                   [(ngModel)]="personasList[0].fotoDePerfil" id="personaFotoDePerfil">
               </div>
@@ -34,7 +34,7 @@
   </div>
 <div class="nombre col-xs-12 col-sm-3 col-md-3 col-lg-3">
   <h1>{{personasList[0].nombre}}</h1>
-  <p>{{personasList[0].titulo}}</p>
+  <h4>{{personasList[0].titulo}}</h4>
 </div>
 <div class="acercade col-xs-11 col-sm-6 col-md-6 col-lg-6">
   <h2>Acerca de mí</h2>
