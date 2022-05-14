@@ -15,6 +15,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 
 
 
@@ -30,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EducacionComponent,
     ProyectosComponent,
     SkillsComponent,
-    FooterComponent
+    FooterComponent,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,

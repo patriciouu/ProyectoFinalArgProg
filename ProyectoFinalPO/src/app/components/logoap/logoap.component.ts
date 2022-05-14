@@ -10,7 +10,7 @@ import { RedSocialServService } from 'src/app/services/red-social-serv.service';
 export class LogoapComponent implements OnInit {
 
   redesList: RedSocial[] = [];
-  red = new RedSocial;
+  redSoc: RedSocial = new RedSocial;
 
   constructor(private redService: RedSocialServService) { }
 
@@ -21,13 +21,14 @@ export class LogoapComponent implements OnInit {
   }
 
   onEdit(red: RedSocial) {
+    const redSoc = red;
     return console.log(red)
   }
 
   editRed(red: RedSocial) {
     this.redService.editRedes(red.redSocialId, red).subscribe(
       data => this.redService.returnRedes().subscribe(
-        data => this.redesList = data
+        response => this.redesList = response
       )
     )
   }

@@ -9,6 +9,7 @@ import { RedSocial } from '../model/red-social';
 export class RedSocialServService {
 
   private urlRedes: string = "http://localhost:8080/portfolio/redes";
+  red: RedSocial = new RedSocial;
 
   constructor(private http: HttpClient) { }
 

@@ -1,9 +1,12 @@
 <div class="row" id="datos">
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <img type="button" data-bs-toggle="modal"  [src]="personasList[0].fotoDePerfil"
+    <img type="button" data-bs-toggle="modal"  [src]="urlCloudinary + personasList[0].fotoDePerfil"
     (click)="onEdit(personasList[0])"
     [attr.data-bs-target]="'#editarPersoImgModal-' + personasList[0].id"
     id="fotoperfil">
+
+    <!-- Editar Imagen Modal -->
+
     <div class="modal fade" id="editarPersoImgModal-{{personasList[0].id}}" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -18,20 +21,23 @@
             <form>
               <div class="form-group">
                 <label for="personaHabilidad" class="col-form-label">Imagen</label>
-                <input type="file" (change)="captureFile($event)"  class="form-control" placeholder="Seleccione imagen" name="personaFotoDePerfil"
+                <input type="text"  class="form-control" placeholder="Seleccione imagen" name="personaFotoDePerfil"
                   [(ngModel)]="personasList[0].fotoDePerfil" id="personaFotoDePerfil">
+                  <app-file-uploader></app-file-uploader>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" (click)="subirArchivo(persona)"
-              >Guardar</button>
+            <button type="button" class="btn btn-primary" (click)="editPerso(personasList[0])"
+            data-bs-dismiss="modal">Guardar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
 <div class="nombre col-xs-12 col-sm-3 col-md-3 col-lg-3">
   <h1>{{personasList[0].nombre}}</h1>
   <h4>{{personasList[0].titulo}}</h4>
@@ -47,6 +53,9 @@
     <path
       d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
   </svg>
+
+  <!-- Editar Persona Modal -->
+  
   <div class="modal fade" id="editarPersoModal-{{personasList[0].id}}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
