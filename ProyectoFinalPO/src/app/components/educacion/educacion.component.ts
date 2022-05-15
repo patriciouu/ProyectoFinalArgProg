@@ -14,6 +14,8 @@ export class EducacionComponent implements OnInit {
   educacion: Educacion = new Educacion;
   educacionList: any;
 
+  urlImagen: string = "http://localhost:8080/portfolio/files/"
+
   constructor(private educacionService: EducacionServService) { }
 
   ngOnInit(): void {

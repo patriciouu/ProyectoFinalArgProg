@@ -12,6 +12,8 @@ export class ProyectosComponent implements OnInit {
   proyecto: Proyecto = new Proyecto;
   proyectosList!: Proyecto[];
 
+  urlImagen: string = "http://localhost:8080/portfolio/files/"
+
   constructor(private proyectoService:ProyectoServService) { }
 
   ngOnInit(): void {

@@ -1,5 +1,21 @@
+<div>
+<label for="file">Seleccionar imagen a subir</label>
 <input type="file" name="file" (change)="selectFile($event)" />
+</div>
+<div>
 <button type="button" class="btn btn-primary" (click)="upload()" >
       Subir imagen
 </button>
+</div>
+<div *ngIf="currentFile" class="progress my-3">
+      <div
+        class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar"
+        attr.aria-valuenow="{{ progress }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: progress + '%' }"
+      >
+        {{ progress }}%
+</div>
 <!-- <div *ngIf="succes"> Subido.</div> -->

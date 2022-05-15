@@ -13,7 +13,7 @@ export class PrincipalComponent implements OnInit {
   personasList: Persona[] = [];
   persona: Persona = new Persona;
 
-  urlCloudinary: string = "http://localhost:8080/portfolio/files/"
+  urlImagen: string = "http://localhost:8080/portfolio/files/"
 
   archivos: any = []
 

@@ -4,4 +4,5 @@ export class Persona {
     titulo!: string;
     acercaDe!: string;
     fotoDePerfil!: string;
+    banner!: string;
 }

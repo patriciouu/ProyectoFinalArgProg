@@ -12,6 +12,8 @@ export class ExperienciaComponent implements OnInit {
   experiencia: Experiencia = new Experiencia;
   experienciaList: Experiencia[] = []
 
+  urlImagen: string = "http://localhost:8080/portfolio/files/"
+
 
   constructor(private experienciaService: ExperienciaService) { }
 
