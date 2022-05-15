@@ -8,7 +8,7 @@ import { RedSocial } from '../model/red-social';
 })
 export class RedSocialServService {
 
-  private urlRedes: string = "https://portfolioargprogpo.web.app/portfolio/redes";
+  private urlRedes: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/redes";
   
   red: RedSocial = new RedSocial;
 

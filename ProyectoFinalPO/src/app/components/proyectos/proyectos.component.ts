@@ -12,7 +12,7 @@ export class ProyectosComponent implements OnInit {
   proyecto: Proyecto = new Proyecto;
   proyectosList!: Proyecto[];
 
-  urlImagen: string = "https://portfolioargprogpo.web.app/portfolio/files/"
+  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
   constructor(private proyectoService:ProyectoServService) { }
 

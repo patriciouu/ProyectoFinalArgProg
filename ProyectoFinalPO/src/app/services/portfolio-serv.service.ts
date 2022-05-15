@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PortfolioServService {
 
-  private apiUrl:string = "https://portfolioargprogpo.web.app/"
+  private apiUrl:string = "https://quiet-reaches-10167.herokuapp.com/"
 
   constructor(private http:HttpClient) { }
 

@@ -12,7 +12,7 @@ export class ExperienciaComponent implements OnInit {
   experiencia: Experiencia = new Experiencia;
   experienciaList: Experiencia[] = []
 
-  urlImagen: string = "https://portfolioargprogpo.web.app/portfolio/files/"
+  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
 
   constructor(private experienciaService: ExperienciaService) { }

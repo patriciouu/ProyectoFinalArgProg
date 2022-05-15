@@ -14,7 +14,7 @@ export class EducacionComponent implements OnInit {
   educacion: Educacion = new Educacion;
   educacionList: any;
 
-  urlImagen: string = "https://portfolioargprogpo.web.app/portfolio/files/"
+  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
   constructor(private educacionService: EducacionServService) { }
 

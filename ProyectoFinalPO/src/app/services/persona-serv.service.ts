@@ -8,7 +8,7 @@ import { Persona } from '../model/persona';
 })
 export class PersonaServService {
 
-  private urlPersona: string = "https://portfolioargprogpo.web.app/portfolio/persona"
+  private urlPersona: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/persona"
 
   constructor(private http: HttpClient) { }
 

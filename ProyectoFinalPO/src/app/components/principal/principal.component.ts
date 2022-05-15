@@ -13,7 +13,7 @@ export class PrincipalComponent implements OnInit {
   personasList: Persona[] = [];
   persona: Persona = new Persona;
 
-  urlImagen: string = "https://portfolioargprogpo.web.app/portfolio/files/"
+  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
   archivos: any = []
 

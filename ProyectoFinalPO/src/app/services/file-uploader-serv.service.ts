@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class FileUploaderServService {
 
-  private urlUploads: string = "https://portfolioargprogpo.web.app/portfolio"
+  private urlUploads: string = "https://quiet-reaches-10167.herokuapp.com/portfolio"
 
   constructor(private http: HttpClient) { }
 
