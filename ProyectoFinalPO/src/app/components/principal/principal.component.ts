@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/model/persona';
+import { PersonaServService } from 'src/app/services/persona-serv.service';
+
 
 @Component({
   selector: 'app-principal',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  personasList: Persona[] = [];
+  persona: Persona = new Persona;
+
+  urlImagen: string = "https://portfolioargprogpo.web.app/portfolio/files/"
+
+  archivos: any = []
+
+   constructor(private personaService:PersonaServService) {
+
+   }
 
   ngOnInit(): void {
+
+    this.personaService.returnPersonas().subscribe(
+      data => this.personasList=data
+    )
   }
 
+  onEdit(persona: Persona){
+    const perso = persona;
+    console.log(persona);
+  }
+  
+  editPerso(persona: Persona){
+    this.personaService.editPersona(persona.id, persona).subscribe(
+      data => this.personaService.returnPersonas().subscribe(
+        response => this.personasList = response
+      )
+    )
+  }
+
+  
 }

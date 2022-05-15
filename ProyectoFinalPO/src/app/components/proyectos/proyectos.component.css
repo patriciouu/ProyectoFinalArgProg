@@ -1,4 +1,26 @@
 .row{
-    padding: 15px;
+    padding: 30px;
     background-color: #C4A484;
+    border-radius: 5%;
+    border-color: black;
+    border-width: thick;
+    margin: 10px 10px 10px 10px;
+}
+
+img{
+    width: 200px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+svg{
+    margin-left: 30px;
+}
+
+.proyTitulo{
+    display: flex;
+    align-items: center;
 }

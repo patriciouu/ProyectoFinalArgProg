@@ -1,9 +1,35 @@
-.row{
-    padding: 15px;
+#datos {
+    padding: 30px;
     background-color: #C4A484;
+    border-color: black;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-width: thick;
+    margin: 0px 10px 10px 10px;
 }
 
-#fotoperfil{
-    border-radius: 100%;
-    
+.nombre {
+    padding: 10px;
+    text-align: center;
+}
+
+.acercade {
+    padding: 10px;
+}
+
+@media (min-width: 576px) {
+    #fotoperfil {
+        width: 100%;
+        border-radius: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    #fotoperfil {
+        width: 50%;
+        border-radius: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }

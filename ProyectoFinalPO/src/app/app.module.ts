@@ -13,6 +13,10 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+
 
 
 
@@ -28,11 +32,15 @@ import { FooterComponent } from './components/footer/footer.component';
     ProyectosComponent,
     SkillsComponent,
     FooterComponent,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

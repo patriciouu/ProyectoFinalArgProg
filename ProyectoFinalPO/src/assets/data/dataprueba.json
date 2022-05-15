@@ -1,0 +1,90 @@
+{
+
+            "id": 1,
+            "nombre": "Patricio Oubiña",
+            "titulo": "Full Stack Developer Jr.",
+            
+    "experiencia": [
+        {
+            "empresa": "Gedyt SA",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "2012 a la fecha",
+            "puesto": "Analista de contabilidad y auditoría interna"
+        },
+        {
+            "empresa": "Dilog Oeste",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "2008 - 2012",
+            "puesto": "Analista de cuentas corrientes"
+        },
+        {
+            "empresa": "Sodería",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "2005",
+            "puesto": "Analista de gasificado"
+        }
+    ],
+    "educacion": [
+        {
+            "educaciónid": "1",
+            "instituto": "UCES",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "hasta 2016",
+            "carrera": "Lic en administración"
+        },
+        {
+            "educaciónid": "2",
+            "instituto": "UNLAM",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "2008 - 2012",
+            "carrera": "Lic en administración"
+        },
+        {
+            "educaciónid": "3",
+            "instituto": "Lucía",
+            "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQHXXmfUoXsaOA/company-logo_200_200/0/1581348681132?e=2147483647&v=beta&t=9L9uUWAJ1xDXNunccG9LKcFYUZGoqPgsCLvyWRFEcDU",
+            "periodo": "Pandemia",
+            "carrera": "Panadero"
+        }
+    ],
+    "proyectos": [
+        {
+            "proyecto": "Portfolio",
+            "imagen": "https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png",
+            "fecha": "2022",
+            "descripcion": "Argentina Programa"
+        },
+        {
+            "proyecto": "Mumuki",
+            "imagen": "https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png",
+            "fecha": "2021",
+            "descripcion": "Argentina Programa 1"
+        }
+    ],
+    "skills": [
+        {
+            "habilidad": "Portfolio",
+            "porcentaje": "95"
+        },
+        {
+            "habilidad": "Prueba",
+            "porcentaje": "30"
+        },{
+            "habilidad": "Portfolio",
+            "porcentaje": "60"
+        },
+        {
+            "habilidad": "Portfolio",
+            "porcentaje": "50"
+        },
+        {
+            "habilidad": "Portfolio",
+            "porcentaje": "70"
+        },
+        {
+            "habilidad": "Portfolio",
+            "porcentaje": "85"
+        }
+    ],
+    "login": true
+}

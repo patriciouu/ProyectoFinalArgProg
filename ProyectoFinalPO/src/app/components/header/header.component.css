@@ -1,3 +1,12 @@
+.row{
+        background-color: #C4A484;
+        border-color: black;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        border-width: thick;
+        margin: 10px 10px 0px 10px;
+}
+
 div{
     background-color: #C4A484;
 }
