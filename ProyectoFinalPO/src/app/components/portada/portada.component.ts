@@ -30,11 +30,11 @@ export class PortadaComponent implements OnInit {
   }
   
   editPerso(persona: Persona){
+    console.log(persona)
     this.personaService.editPersona(persona.id, persona).subscribe(
       data => this.personaService.returnPersonas().subscribe(
         response => this.personasList = response
       )
     )
   }
-
 }
