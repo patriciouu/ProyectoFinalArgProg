@@ -1,5 +1,5 @@
 <div class="row">
-    <img [src]="personasList[0].banner" alt="">
+    <img [src]="urlImagen + personasList[0].banner" alt="">
     <button class="btn btn-secondary col-12" data-bs-toggle="modal" (click)="onEdit(personasList[0])"
         [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id" id="banner"> Editar foto de portada
     </button>
@@ -20,14 +20,9 @@
                         <div class="form-group">
                             <label for="personaHabilidad" class="col-form-label">Ingrese el nombre completo del
                                 archivo</label>
-                            <input type="text" ngModel={{urlBanner}} class="form-control"
-                                placeholder="Seleccione imagen" name="personaBanner"
+                            <input type="text" class="form-control" placeholder="Seleccione imagen" name="personaBanner"
                                 [(ngModel)]="personasList[0].banner" id="personaBanner">
                             <app-file-uploader></app-file-uploader>
-                            <div>
-                                <label for="file">Seleccionar imagen a subir</label>
-                                <input type="file" name="file" (change)="selectFile($event)" />
-                            </div>
                         </div>
                     </form>
                 </div>
