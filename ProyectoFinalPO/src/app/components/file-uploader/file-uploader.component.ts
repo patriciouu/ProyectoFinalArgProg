@@ -22,12 +22,15 @@ export class FileUploaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imagenes: any[] = []
+
   selectFile(event: any): void {
     this.selectedFiles = event.target.files;
   }
-  
+
 
   upload(): void {
+
     this.progress = 0;
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);

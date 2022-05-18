@@ -16,8 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
-
-
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { AngularFireModule} from '@angular/fire/compat/';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { environment } from '../environments/environment'
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
     ProyectosComponent,
     SkillsComponent,
     FooterComponent,
-    FileUploaderComponent
+    FileUploaderComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

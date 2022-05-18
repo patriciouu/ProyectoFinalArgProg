@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { LoginServService } from 'src/app/services/login-serv.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,10 +14,13 @@ export class ExperienciaComponent implements OnInit {
   experiencia: Experiencia = new Experiencia;
   experienciaList: Experiencia[] = []
 
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+
+
   urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
 
-  constructor(private experienciaService: ExperienciaService) { }
+  constructor(private experienciaService: ExperienciaService, private authServ: LoginServService) { }
 
   ngOnInit(): void {
 

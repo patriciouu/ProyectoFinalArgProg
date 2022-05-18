@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProyectoServService } from 'src/app/services/proyecto-serv.service';
 import { Proyecto } from 'src/app/model/proyecto';
+import { LoginServService } from 'src/app/services/login-serv.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-proyectos',
@@ -12,9 +14,12 @@ export class ProyectosComponent implements OnInit {
   proyecto: Proyecto = new Proyecto;
   proyectosList!: Proyecto[];
 
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+
+
   urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
-  constructor(private proyectoService:ProyectoServService) { }
+  constructor(private proyectoService:ProyectoServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {
     

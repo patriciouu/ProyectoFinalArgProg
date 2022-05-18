@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaServService } from 'src/app/services/persona-serv.service';
 import { Persona } from 'src/app/model/persona';
+import { LoginServService } from 'src/app/services/login-serv.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-portada',
@@ -12,9 +14,12 @@ export class PortadaComponent implements OnInit {
   personasList: Persona[] = [];
   persona: Persona = new Persona;
 
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+
+
   urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
-  constructor(private personaService: PersonaServService) { }
+  constructor(private personaService: PersonaServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {
     
@@ -30,11 +35,11 @@ export class PortadaComponent implements OnInit {
   }
   
   editPerso(persona: Persona){
+    console.log(persona)
     this.personaService.editPersona(persona.id, persona).subscribe(
       data => this.personaService.returnPersonas().subscribe(
         response => this.personasList = response
       )
     )
   }
-
 }

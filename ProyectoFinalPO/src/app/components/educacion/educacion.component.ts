@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionServService } from 'src/app/services/educacion-serv.service';
+import { LoginServService } from 'src/app/services/login-serv.service';
 import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 
 @Component({
@@ -14,9 +16,12 @@ export class EducacionComponent implements OnInit {
   educacion: Educacion = new Educacion;
   educacionList: any;
 
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+
+
   urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
-  constructor(private educacionService: EducacionServService) { }
+  constructor(private educacionService: EducacionServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {
     this.educacionService.returnEducacion().subscribe(data =>

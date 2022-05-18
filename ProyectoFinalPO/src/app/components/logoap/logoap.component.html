@@ -4,7 +4,7 @@
       <img src="../../../assets/LogoArgProg.png" id="logoAP">
     </div>
     <div class="iconos">
-      <svg (click)="onEdit(redesList[0])" type="button" data-bs-toggle="modal"
+      <svg *ngIf="user$ | async as user" (click)="onEdit(redesList[0])" type="button" data-bs-toggle="modal"
         [attr.data-bs-target]="'#editarRedesModal-' + redesList[0].redSocialId" xmlns="http://www.w3.org/2000/svg"
         width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
         <path
@@ -16,8 +16,12 @@
           src="../../../assets/LogoFB.png"></a>
       <a *ngIf="redesList[0].urlLinkedin" [href]="redesList[0].urlLinkedin" target="_blank"><img
           src="../../../assets/LogoLinkedin.png"></a>
-      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#exampleModalCenter">LOGIN</button>
+      <button *ngIf="user$ | async as user, else login" type="button" class="btn btn-outline-dark"
+        (click)="onLogout()">LOGOUT</button>
+      <ng-template #login>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+          data-bs-target="#loginFormModal">LOGIN</button>
+      </ng-template>
     </div>
   </div>
 
@@ -53,35 +57,12 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" (click)="editRed(redesList[0])" data-bs-dismiss="modal">Guardar</button>
+          <button type="button" class="btn btn-primary" (click)="editRed(redesList[0])"
+            data-bs-dismiss="modal">Guardar</button>
         </div>
       </div>
     </div>
   </div>
-
 
   <!-- Modal Form Login -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-bs-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-bs-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
+  <app-login-form></app-login-form>

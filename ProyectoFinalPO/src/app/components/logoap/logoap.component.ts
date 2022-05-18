@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
 import { RedSocial } from 'src/app/model/red-social';
+import { LoginServService } from 'src/app/services/login-serv.service';
 import { RedSocialServService } from 'src/app/services/red-social-serv.service';
 
 @Component({
@@ -9,15 +12,27 @@ import { RedSocialServService } from 'src/app/services/red-social-serv.service';
 })
 export class LogoapComponent implements OnInit {
 
+  public isLogged = false;
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+  
+
+
   redesList: RedSocial[] = [];
   redSoc: RedSocial = new RedSocial;
 
-  constructor(private redService: RedSocialServService) { }
 
-  ngOnInit(): void {
+
+  constructor(private redService: RedSocialServService, private authServ: LoginServService) { }
+
+  async ngOnInit() {
     this.redService.returnRedes().subscribe(
       data => this.redesList = data
-    )
+    );
+    
+    // const user = await this.authServ.getCurrentUser();
+    // if (user) {
+    //   console.log('User->', user);
+    // }
   }
 
   onEdit(red: RedSocial) {
@@ -33,7 +48,13 @@ export class LogoapComponent implements OnInit {
     )
   }
 
-
-
+  async onLogout() {
+    try {
+      await this.authServ.logout();
+      // ROUTER????
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 }
