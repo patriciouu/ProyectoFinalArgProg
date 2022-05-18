@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="container col-12">
+  <div class="container">
     <div class="logoap">
       <img src="../../../assets/LogoArgProg.png" id="logoAP">
     </div>
@@ -26,48 +26,46 @@
           data-bs-target="#loginFormModal">LOGIN</button>
         <button *ngIf="!user" type="button" class="btn btn-outline-dark"  >LOGOUT</button> -->
     </div>
+  </div>
 
-    <!-- Modal Edit Redes -->
-    <div class="modal fade" id="editarRedesModal-{{redesList[0].redSocialId}}" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editarRedesModal">Editar Redes Sociales</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="urlInstagram" class="col-form-label">Instagram</label>
-                <input type="text" class="form-control" placeholder="Ingrese URL de Instagram" name="urlInsta"
-                  [(ngModel)]="redesList[0].urlInstagram" id="urlInsta">
-              </div>
-              <div class="form-group">
-                <label for="urlFacebook" class="col-form-label">Facebook</label>
-                <input type="string" class="form-control" placeholder="Ingrese URL de Facebook" name="urlFace"
-                  [(ngModel)]="redesList[0].urlFacebook" id="urlFace">
-              </div>
-              <div class="form-group">
-                <label for="urlLinkedin" class="col-form-label">Linkedin</label>
-                <input type="string" class="form-control" placeholder="Ingrese URL de Linkedin" name="urlLink"
-                  [(ngModel)]="redesList[0].urlLinkedin" id="urlLink">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" (click)="editRed(redesList[0])"
-              data-bs-dismiss="modal">Guardar</button>
-          </div>
+  <!-- Modal Edit Redes -->
+  <div class="modal fade" id="editarRedesModal-{{redesList[0].redSocialId}}" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarRedesModal">Editar Redes Sociales</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="urlInstagram" class="col-form-label">Instagram</label>
+              <input type="text" class="form-control" placeholder="Ingrese URL de Instagram" name="urlInsta"
+                [(ngModel)]="redesList[0].urlInstagram" id="urlInsta">
+            </div>
+            <div class="form-group">
+              <label for="urlFacebook" class="col-form-label">Facebook</label>
+              <input type="string" class="form-control" placeholder="Ingrese URL de Facebook" name="urlFace"
+                [(ngModel)]="redesList[0].urlFacebook" id="urlFace">
+            </div>
+            <div class="form-group">
+              <label for="urlLinkedin" class="col-form-label">Linkedin</label>
+              <input type="string" class="form-control" placeholder="Ingrese URL de Linkedin" name="urlLink"
+                [(ngModel)]="redesList[0].urlLinkedin" id="urlLink">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="editRed(redesList[0])"
+            data-bs-dismiss="modal">Guardar</button>
         </div>
       </div>
     </div>
-
-    <!-- Modal Form Login -->
-    <app-login-form></app-login-form>
-
-
   </div>
+
+  <!-- Modal Form Login -->
+  <app-login-form></app-login-form>
