@@ -2,17 +2,14 @@ import { HttpClient, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/storage'
 import { environment } from 'src/environments/environment';
 
-firebase.initializeApp(environment.firebaseConfig)
+firebase.initializeApp(environment.firebase)
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileUploaderServService {
-
-  storareRef= firebase.app().storage().ref();
 
   private urlUploads: string = "http://localhost:8080/portfolio"
 

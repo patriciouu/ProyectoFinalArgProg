@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Persona } from 'src/app/model/persona';
+import { LoginServService } from 'src/app/services/login-serv.service';
 import { PersonaServService } from 'src/app/services/persona-serv.service';
 
 
@@ -13,11 +15,14 @@ export class PrincipalComponent implements OnInit {
   personasList: Persona[] = [];
   persona: Persona = new Persona;
 
+  public user$: Observable<any> = this.authServ.fireAuth.user;
+
+
   urlImagen: string = "http://localhost:8080/portfolio/files/"
 
   archivos: any = []
 
-   constructor(private personaService:PersonaServService) {
+   constructor(private personaService:PersonaServService, private authServ: LoginServService) {
 
    }
 

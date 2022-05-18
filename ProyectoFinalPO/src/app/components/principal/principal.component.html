@@ -1,9 +1,13 @@
 <div class="row" id="datos">
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <img type="button" data-bs-toggle="modal"  [src]="urlImagen + personasList[0].fotoDePerfil"
+    <img *ngIf="user$ | async as user, else editFotoPerfil" type="button" data-bs-toggle="modal"  [src]="urlImagen + personasList[0].fotoDePerfil"
     (click)="onEdit(personasList[0])"
     [attr.data-bs-target]="'#editarPersoImgModal-' + personasList[0].id"
     id="fotoperfil">
+    <ng-template #editFotoPerfil>
+    <img [src]="urlImagen + personasList[0].fotoDePerfil"
+    id="fotoperfil">
+    </ng-template>
 
     <!-- Editar Imagen Modal -->
 
@@ -47,7 +51,7 @@
   <p>{{personasList[0].acercaDe}}</p>
 </div>
 <div class="icons col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
-  <svg (click)="onEdit(personasList[0])" type="button" data-bs-toggle="modal"
+  <svg *ngIf="user$ | async as user" (click)="onEdit(personasList[0])" type="button" data-bs-toggle="modal"
     [attr.data-bs-target]="'#editarPersoModal-' + personasList[0].id" xmlns="http://www.w3.org/2000/svg" width="16"
     height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
     <path

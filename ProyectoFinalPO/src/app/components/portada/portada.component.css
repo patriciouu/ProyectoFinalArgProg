@@ -6,3 +6,7 @@ img {
     padding-left: calc(var(--bs-gutter-x) * 0);
     margin-top: var(--bs-gutter-y);
 }
+
+ul{
+    list-style: none;
+}

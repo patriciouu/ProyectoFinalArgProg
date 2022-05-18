@@ -1,8 +1,15 @@
 <div class="row">
-    <img [src]="urlImagen + personasList[0].banner" alt="">
-    <button class="btn btn-secondary col-12" data-bs-toggle="modal" (click)="onEdit(personasList[0])"
-        [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id" id="banner"> Editar foto de portada
-    </button>
+    <img *ngIf="user$ | async as user, else editBanner" type="button" [src]="urlImagen + personasList[0].banner" data-bs-toggle="modal"
+    (click)="onEdit(personasList[0])" [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id"
+    id="banner">
+    <!-- <button  class="btn btn-secondary col-12" data-bs-toggle="modal"
+        (click)="onEdit(personasList[0])" [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id"
+        id="banner"> Editar foto de
+        portada
+    </button> -->
+    <ng-template #editBanner>
+        <img [src]="urlImagen + personasList[0].banner" id="banner">
+    </ng-template>
 
     <!-- Editar Banner Modal -->
     <div class="modal fade" id="editarPersoBannerModal-{{personasList[0].id}}" tabindex="-1" role="dialog"

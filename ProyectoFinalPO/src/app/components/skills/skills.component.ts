@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillServService } from 'src/app/services/skill-serv.service';
 import { Skill } from 'src/app/model/skill';
+import { LoginServService } from 'src/app/services/login-serv.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-skills',
@@ -11,8 +13,11 @@ export class SkillsComponent implements OnInit {
 
   skill: Skill = new Skill;
   skillsList: Skill[] = [];
+  
+  public user$: Observable<any> = this.authServ.fireAuth.user;
 
-  constructor(private skillService:SkillServService) { }
+
+  constructor(private skillService:SkillServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {
    this.skillService.returnSkills().subscribe(
