@@ -10,14 +10,21 @@
             <div class="modal-body">
                 <form [formGroup]="loginForm">
                     <div class="form-group">
-                        <label for="email" class="col-form-label">Usuario</label>
                         <input type="email" class="form-control" placeholder="Ingrese mail del usuario"
-                            formControlName="email" id="userMail">
+                        [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"    formControlName="email" id="userMail">
+                        <div *ngIf="Email?.errors && Email?.touched">
+                            <p *ngIf="Email?.hasError('required')" class="text-danger">Se requiere email</p>
+                            <p *ngIf="Email?.hasError('email')" class="text-danger">El mail debe tener un formato válido
+                            </p>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-form-label">Contraseña</label>
                         <input type="password" class="form-control" placeholder="Ingrese contraseña"
-                            formControlName="password" id="userPassword">
+                        [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"    formControlName="password" id="userPassword">
+                        <div *ngIf="Password?.errors && Password?.touched">
+                            <p *ngIf="Password?.hasError('required')" class="text-danger">Se requiere contraseña</p>
+                        </div>
                     </div>
                 </form>
             </div>
