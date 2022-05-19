@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionServService } from 'src/app/services/educacion-serv.service';
 import { LoginServService } from 'src/app/services/login-serv.service';
-import { PortfolioServService } from 'src/app/services/portfolio-serv.service';
 
 @Component({
   selector: 'app-educacion',

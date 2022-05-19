@@ -13,8 +13,13 @@ export class LoginServService {
   constructor(public fireAuth: AngularFireAuth) { }
 
   async login(email: string, password: string) {
+    try {
       const result = await this.fireAuth.signInWithEmailAndPassword(email, password);
       return result;
+    } catch {
+      alert("Usuario o contraseña incorrectos");
+      return null;
+    }
   }
 
   async logout() {
