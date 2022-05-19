@@ -36,10 +36,10 @@
                   [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
               </div>
               <div class="form-group">
-                <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo de imagen logo</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo de imagen logo" name="logoEmpresa"
-                  [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
                 <app-file-uploader></app-file-uploader>
+                <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej. "imagen.jpg")</label>
+                <input type="text" class="form-control" placeholder="Ingrese nombre completo de imagen" name="logoEmpresa"
+                  [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
               </div>
             </form>
           </div>
@@ -110,11 +110,11 @@
                             name="puesto" [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
                         </div>
                         <div class="form-group">
-                          <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo de imagen logo</label>
-                          <input type="text" class="form-control" placeholder="Ingrese nombre completo de imagen logo" name="logoEmpresa"
+                          <app-file-uploader></app-file-uploader>
+                          <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej. "imagen.jpg")</label>
+                          <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo subido" name="logoEmpresa"
                             [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
                         </div>
-                        <app-file-uploader></app-file-uploader>
                       </form>
                     </div>
                     <div class="modal-footer">

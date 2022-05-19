@@ -25,11 +25,10 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="personaHabilidad" class="col-form-label">Ingrese el nombre completo del
-                                archivo</label>
-                            <input type="text" class="form-control" placeholder="Seleccione imagen" name="personaBanner"
-                                [(ngModel)]="personasList[0].banner" id="personaBanner">
                             <app-file-uploader></app-file-uploader>
+                            <label for="personaHabilidad" class="col-form-label">Ingrese nombre completo del archivo subido (Ej. "imagen.jpg")</label>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre completo del archivo subido" name="personaBanner"
+                                [(ngModel)]="personasList[0].banner" id="personaBanner">
                         </div>
                     </form>
                 </div>

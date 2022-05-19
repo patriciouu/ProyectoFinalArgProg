@@ -36,11 +36,11 @@
                   [(ngModel)]="educacion.carrera" id="educacionCarrera">
               </div>
               <div class="form-group">
-                <label for="educacionLogo" class="col-form-label">Ingrese nombre completo de la imagen logo</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo de la imagen logo" name="logoEducacion"
+                <app-file-uploader></app-file-uploader>
+                <label for="educacionLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej. "imagen.jpg")</label>
+                <input type="text" class="form-control" placeholder="Ingrese nombre completo de la imagen" name="logoEducacion"
                   [(ngModel)]="educacion.logoEducacion" id="educacionLogo">
               </div>
-              <app-file-uploader></app-file-uploader>
             </form>
           </div>
           <div class="modal-footer">
@@ -111,8 +111,8 @@
                           id="educacionCarrera">
                       </div>
                       <div class="form-group">
-                        <label for="educacionLogo" class="col-form-label">Ingrese nombre completo de la imagen logo</label>
-                        <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo logo" 
+                        <label for="educacionLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej. "imagen.jpg")</label>
+                        <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo subido" 
                         name="logoEducacion" [(ngModel)]="educacion.logoEducacion"
                         id="educacionLogo">
                       </div>
