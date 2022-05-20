@@ -33,6 +33,11 @@
                   name="descripcionProyecto" [(ngModel)]="proyecto.descripcionProyecto" id="proyectosDescripcion">
               </div>
               <div class="form-group">
+                <label for="proyectosUrl" class="col-form-label">Ingrese URL del proyecto</label>
+                <input type="text" class="form-control" placeholder="Ingrese URL del proyecto"
+                  name="urlProyecto" [(ngModel)]="proyecto.urlProyecto" id="urlProyecto">
+              </div>
+              <div class="form-group">
                 <label for="proyectosImagen" class="col-form-label">Ingrese nombre completo del archivo iamgen</label>
                 <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo iamgen"
                   name="imagenProyecto" [(ngModel)]="proyecto.imagenProyecto" id="proyectosLogo">
@@ -56,7 +61,7 @@
         <div class="item">
           <div class="proyecto">
             <div class="datos">
-              <h3>{{proyecto.nombreProyecto}}</h3>
+             <h3>{{proyecto.nombreProyecto}}</h3>
               <p>{{proyecto.descripcionProyecto}}</p>
             </div>
           </div>
@@ -93,6 +98,11 @@
                           id="proyectosDescripcion">
                       </div>
                       <div class="form-group">
+                        <label for="proyectosUrl" class="col-form-label">Ingrese URL del proyecto</label>
+                        <input type="text" class="form-control" placeholder="Ingrese URL del proyecto"
+                          name="urlProyecto" [(ngModel)]="proyecto.urlProyecto" id="urlProyecto">
+                      </div>
+                      <div class="form-group">
                         <label for="proyectosImagen" class="col-form-label">Ingrese nombre completo del archivo
                           iamgen</label>
                         <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo iamgen"
@@ -119,7 +129,7 @@
           </div>
         </div>
         <div class="col-3" id="imagen">
-          <img [src]="urlImagen + proyecto.imagenProyecto">
+          <a [href]="proyecto.urlProyecto"><img [src]="urlImagen + proyecto.imagenProyecto"></a>
         </div>
       </li>
     </ul>

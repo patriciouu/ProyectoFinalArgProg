@@ -9,6 +9,7 @@
 
 img{
     width: 200px;
+    border: 10px, black;
 }
 
 .item{
@@ -23,4 +24,8 @@ svg{
 .proyTitulo{
     display: flex;
     align-items: center;
+}
+
+ul{
+    list-style: none;
 }

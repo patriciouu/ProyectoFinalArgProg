@@ -3,4 +3,5 @@ export class Proyecto {
     nombreProyecto!: string;
     descripcionProyecto!: string;
     imagenProyecto!: string;
+    urlProyecto!: string;
 }
