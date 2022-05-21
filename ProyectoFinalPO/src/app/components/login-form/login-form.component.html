@@ -10,7 +10,6 @@
             <div class="modal-body">
                 <form [formGroup]="loginForm">
                     <div class="form-group">
-                        <label for="email" class="col-form-label">Usuario</label>
                         <input type="email" class="form-control" placeholder="Ingrese mail del usuario"
                         [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"    formControlName="email" id="userMail">
                         <div *ngIf="Email?.errors && Email?.touched">

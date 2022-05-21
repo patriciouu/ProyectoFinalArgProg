@@ -14,7 +14,11 @@ export class LoginFormComponent implements OnInit {
     password: new FormControl('')
   });
 
+<<<<<<< HEAD
   constructor(private authServ: LoginServService, private formBuilder: FormBuilder) {
+=======
+  constructor(private authServ: LoginServService, private formBuilder: FormBuilder) { 
+>>>>>>> secundario
     this.loginForm = this.formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
