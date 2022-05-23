@@ -27,8 +27,8 @@
                   [(ngModel)]="educacion.instituto" id="educacionInstituto">
               </div>
               <div class="form-group">
-                <label for="educacionPeriodo" class="col-form-label">Periodo</label>
-                <input type="text" class="form-control" placeholder="Ingrese período de tiempo" name="periodo"
+                <label for="educacionPeriodo" class="col-form-label">Año de inicio</label>
+                <input type="number" class="form-control" placeholder="Ingrese año de inicio" name="periodo"
                   [(ngModel)]="educacion.periodo" id="educacionPeriodo">
               </div>
               <div class="form-group">
@@ -100,9 +100,10 @@
                           name="instituto" [(ngModel)]="educacion.instituto" id="educacionInstituto">
                       </div>
                       <div class="form-group">
-                        <label for="educacionPeriodo" class="col-form-label">Periodo</label>
-                        <input type="text" class="form-control" placeholder="Ingrese período de tiempo" name="periodo"
-                          [(ngModel)]="educacion.periodo" id="educacionPeriodo">
+                        <label for="educacionPeriodo" class="col-form-label">Año de inicio</label>
+                        <input type="number" class="form-control" placeholder="Ingrese año de inicio"
+                        name="periodo" [(ngModel)]="educacion.periodo"
+                          id="educacionPeriodo">
                       </div>
                       <div class="form-group">
                         <label for="educacionCarrera" class="col-form-label">Carrera / Curso</label>
