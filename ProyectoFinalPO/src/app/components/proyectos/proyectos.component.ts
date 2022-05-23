@@ -17,7 +17,6 @@ export class ProyectosComponent implements OnInit {
   public user$: Observable<any> = this.authServ.fireAuth.user;
 
 
-  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
 
   constructor(private proyectoService:ProyectoServService, private authServ: LoginServService) { }
 

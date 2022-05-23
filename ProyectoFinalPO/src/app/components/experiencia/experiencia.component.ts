@@ -16,10 +16,6 @@ export class ExperienciaComponent implements OnInit {
 
   public user$: Observable<any> = this.authServ.fireAuth.user;
 
-
-  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
-
-
   constructor(private experienciaService: ExperienciaService, private authServ: LoginServService) { }
 
   ngOnInit(): void {

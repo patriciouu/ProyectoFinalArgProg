@@ -32,17 +32,21 @@
                   [(ngModel)]="educacion.periodo" id="educacionPeriodo">
               </div>
               <div class="form-group">
+                <label for="educacionPeriodo" class="col-form-label">Año de de finalización</label>
+                <input type="number" class="form-control" placeholder="Ingrese año de finalización" name="periodoFin"
+                  [(ngModel)]="educacion.periodoFin" id="educacionPeriodoFin">
+              </div>
+              <div class="form-group">
                 <label for="educacionCarrera" class="col-form-label">Carrera / Curso</label>
                 <input type="text" class="form-control" placeholder="Ingrese la carrera / curso" name="carrera"
                   [(ngModel)]="educacion.carrera" id="educacionCarrera">
               </div>
               <div class="form-group">
-                <app-file-uploader></app-file-uploader>
-                <label for="educacionLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej.
-                  "imagen.jpg")</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo de la imagen"
+                <label for="educacionLogo" class="col-form-label">Logo - Ingrese la URL de la imagen</label>
+                <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen"
                   name="logoEducacion" [(ngModel)]="educacion.logoEducacion" id="educacionLogo">
               </div>
+              <!-- <app-file-uploader></app-file-uploader> -->
             </form>
           </div>
           <div class="modal-footer">
@@ -62,15 +66,23 @@
         <div class="item">
           <div class="empresaflex">
             <div>
-              <img class="imagenflex" [src]="urlImagen + educacion.logoEducacion">
+              <img class="imagenflex" [src]="educacion.logoEducacion">
             </div>
             <div>
               <h3 class="empresaflex">
                 {{educacion.instituto}}
               </h3>
-              <p class="empresaflex">
-                {{educacion.periodo}}
-              </p>
+              <div class="periodo">
+                <p *ngIf="educacion.periodo !== 0" class="empresaflex">
+                  {{educacion.periodo}}
+                </p>
+                <p *ngIf="educacion.periodoFin !== 0 && educacion.periodo !== 0" class="empresaflex">
+                  -
+                </p>
+                <p *ngIf="educacion.periodoFin !== 0" class="empresaflex">
+                  {{educacion.periodoFin}}
+                </p>
+              </div>
             </div>
           </div>
           <div class="iconsflex">
@@ -101,9 +113,13 @@
                       </div>
                       <div class="form-group">
                         <label for="educacionPeriodo" class="col-form-label">Año de inicio</label>
-                        <input type="number" class="form-control" placeholder="Ingrese año de inicio"
-                        name="periodo" [(ngModel)]="educacion.periodo"
-                          id="educacionPeriodo">
+                        <input type="number" class="form-control" placeholder="Ingrese año de inicio" name="periodo"
+                          [(ngModel)]="educacion.periodo" id="educacionPeriodo">
+                      </div>
+                      <div class="form-group">
+                        <label for="educacionPeriodo" class="col-form-label">Año de de finalización</label>
+                        <input type="number" class="form-control" placeholder="Ingrese año de finalización"
+                          name="periodoFin" [(ngModel)]="educacion.periodoFin" id="educacionPeriodoFin">
                       </div>
                       <div class="form-group">
                         <label for="educacionCarrera" class="col-form-label">Carrera / Curso</label>
@@ -111,12 +127,11 @@
                           [(ngModel)]="educacion.carrera" id="educacionCarrera">
                       </div>
                       <div class="form-group">
-                        <label for="educacionLogo" class="col-form-label">Ingrese nombre completo del archivo subido
-                          (Ej. "imagen.jpg")</label>
-                        <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo subido"
+                        <label for="educacionLogo" class="col-form-label">Logo - Ingrese la URL de la imagen</label>
+                        <input type="text" class="form-control" placeholder="Ingrese URL de la imagen"
                           name="logoEducacion" [(ngModel)]="educacion.logoEducacion" id="educacionLogo">
                       </div>
-                      <app-file-uploader></app-file-uploader>
+                      <!-- <app-file-uploader></app-file-uploader> -->
                     </form>
                   </div>
                   <div class="modal-footer">

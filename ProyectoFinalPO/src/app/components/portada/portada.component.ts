@@ -16,9 +16,6 @@ export class PortadaComponent implements OnInit {
 
   public user$: Observable<any> = this.authServ.fireAuth.user;
 
-
-  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
-
   constructor(private personaService: PersonaServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {

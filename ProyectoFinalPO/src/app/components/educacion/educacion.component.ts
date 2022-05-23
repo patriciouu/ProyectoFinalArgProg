@@ -16,10 +16,7 @@ export class EducacionComponent implements OnInit {
   educacionList: any;
 
   public user$: Observable<any> = this.authServ.fireAuth.user;
-
-
-  urlImagen: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/files/"
-
+  
   constructor(private educacionService: EducacionServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {

@@ -32,16 +32,20 @@
                   [(ngModel)]="experiencia.periodo" id="experienciaPeriodo">
               </div>
               <div class="form-group">
+                <label for="experienciaPeriodoFin" class="col-form-label">Año de finalización</label>
+                <input type="number" class="form-control" placeholder="Ingrese año de finalización" name="periodoFin"
+                  [(ngModel)]="experiencia.periodoFin" id="experienciaPeriodoFin">
+              </div>
+              <div class="form-group">
                 <label for="experienciaDescripcion" class="col-form-label">Descripción</label>
                 <input type="text" class="form-control" placeholder="Ingrese descripción del puesto" name="puesto"
                   [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
               </div>
               <div class="form-group">
-                <app-file-uploader></app-file-uploader>
-                <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo del archivo subido (Ej.
-                  "imagen.jpg")</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo de imagen"
+                <label for="experienciaLogo" class="col-form-label">Logo - Ingrese la URL de la imagen</label>
+                <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen"
                   name="logoEmpresa" [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
+                <!-- <app-file-uploader></app-file-uploader> -->
               </div>
             </form>
           </div>
@@ -61,15 +65,23 @@
         <div class="item">
           <div class="empresa">
             <div>
-              <img class="empresaflex" [src]="urlImagen + experiencia.logoEmpresa">
+              <img class="empresaflex" [src]="experiencia.logoEmpresa">
             </div>
             <div>
               <h3 class="empresaflex">
                 {{experiencia.empresa}}
               </h3>
-              <p class="empresaflex">
-                {{experiencia.periodo}}
-              </p>
+              <div class="periodo">
+                <p *ngIf="experiencia.periodo !== 0" class="empresaflex">
+                  {{experiencia.periodo}}
+                </p>
+                <p *ngIf="experiencia.periodoFin !== 0 && experiencia.periodo !== 0" class="empresaflex">
+                  -
+                </p>
+                <p *ngIf="experiencia.periodoFin !== 0" class="empresaflex">
+                  {{experiencia.periodoFin}}
+                </p>
+              </div>
             </div>
           </div>
           <div>
@@ -106,18 +118,21 @@
                             [(ngModel)]="experiencia.periodo" id="experienciaPeriodo">
                         </div>
                         <div class="form-group">
+                          <label for="experienciaPeriodoFin" class="col-form-label">Año de finalización</label>
+                          <input type="number" class="form-control" placeholder="Ingrese año de finalización"
+                            name="periodoFin" [(ngModel)]="experiencia.periodoFin" id="experienciaPeriodoFin">
+                        </div>
+                        <div class="form-group">
                           <label for="experienciaDescripcion" class="col-form-label">Descripción</label>
                           <input type="text" class="form-control" placeholder="Ingrese descripción del puesto"
                             name="puesto" [(ngModel)]="experiencia.puesto" id="experienciaDescripcion">
                         </div>
                         <div class="form-group">
-                          <app-file-uploader></app-file-uploader>
-                          <label for="experienciaLogo" class="col-form-label">Ingrese nombre completo del archivo subido
-                            (Ej. "imagen.jpg")</label>
-                          <input type="text" class="form-control"
-                            placeholder="Ingrese nombre completo del archivo subido" name="logoEmpresa"
-                            [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
+                          <label for="experienciaLogo" class="col-form-label">Logo - Ingrese la URL de la imagen</label>
+                          <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen"
+                            name="logoEmpresa" [(ngModel)]="experiencia.logoEmpresa" id="experienciaLogo">
                         </div>
+                        <!-- <app-file-uploader></app-file-uploader> -->
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -146,6 +161,3 @@
     </ul>
   </div>
 </div>
-
-
-

@@ -9,7 +9,6 @@
 
 img{
     width: 200px;
-    border: 10px, black;
 }
 
 .item{
@@ -19,6 +18,10 @@ img{
 
 svg{
     margin-left: 30px;
+}
+
+.proyecto{
+    margin: 10px;
 }
 
 .proyTitulo{
