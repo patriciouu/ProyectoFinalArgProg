@@ -17,9 +17,6 @@ export class PrincipalComponent implements OnInit {
 
   public user$: Observable<any> = this.authServ.fireAuth.user;
 
-
-  urlImagen: string = "http://localhost:8080/portfolio/files/"
-
   archivos: any = []
 
    constructor(private personaService:PersonaServService, private authServ: LoginServService) {

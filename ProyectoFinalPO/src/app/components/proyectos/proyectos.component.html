@@ -28,21 +28,26 @@
                   [(ngModel)]="proyecto.nombreProyecto" id="proyectosProyecto">
               </div>
               <div class="form-group">
-                <label for="proyectosDescripcion" class="col-form-label">Periodo</label>
+                <label for="proyectosFecha" class="col-form-label">Año del proyecto</label>
+                <input type="number" class="form-control" placeholder="Ingrese año del proyecto" name="proyectosFecha"
+                  [(ngModel)]="proyecto.fecha" id="proyectosFecha">
+              </div>
+              <div class="form-group">
+                <label for="proyectosDescripcion" class="col-form-label">Descripción</label>
                 <input type="text" class="form-control" placeholder="Ingrese descripción del proyecto"
                   name="descripcionProyecto" [(ngModel)]="proyecto.descripcionProyecto" id="proyectosDescripcion">
               </div>
               <div class="form-group">
-                <label for="proyectosUrl" class="col-form-label">Ingrese URL del proyecto</label>
-                <input type="text" class="form-control" placeholder="Ingrese URL del proyecto"
-                  name="urlProyecto" [(ngModel)]="proyecto.urlProyecto" id="urlProyecto">
+                <label for="proyectosUrl" class="col-form-label">URL del proyecto</label>
+                <input type="text" class="form-control" placeholder="Ingrese URL del proyecto" name="urlProyecto"
+                  [(ngModel)]="proyecto.urlProyecto" id="urlProyecto">
               </div>
               <div class="form-group">
-                <label for="proyectosImagen" class="col-form-label">Ingrese nombre completo del archivo iamgen</label>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo iamgen"
-                  name="imagenProyecto" [(ngModel)]="proyecto.imagenProyecto" id="proyectosLogo">
+                <label for="proyectosImagen" class="col-form-label">Imagen - Ingrese la URL de la imagen</label>
+                <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen" name="imagenProyecto"
+                  [(ngModel)]="proyecto.imagenProyecto" id="proyectosLogo">
               </div>
-              <app-file-uploader></app-file-uploader>
+              <!-- <app-file-uploader></app-file-uploader> -->
             </form>
           </div>
           <div class="modal-footer">
@@ -61,8 +66,9 @@
         <div class="item">
           <div class="proyecto">
             <div class="datos">
-             <h3>{{proyecto.nombreProyecto}}</h3>
+              <h3>{{proyecto.nombreProyecto}}</h3>
               <p>{{proyecto.descripcionProyecto}}</p>
+              <p *ngIf="proyecto.fecha !== 0">{{proyecto.fecha}}</p>
             </div>
           </div>
           <div class="iconsflex">
@@ -92,23 +98,27 @@
                           name="nombreProyecto" [(ngModel)]="proyecto.nombreProyecto" id="proyectosProyecto">
                       </div>
                       <div class="form-group">
-                        <label for="proyectosDescripcion" class="col-form-label">Periodo</label>
+                        <label for="proyectosFecha" class="col-form-label">Año del proyecto</label>
+                        <input type="number" class="form-control" placeholder="Ingrese año del proyecto"
+                          name="proyectosFecha" [(ngModel)]="proyecto.fecha" id="proyectosFecha">
+                      </div>
+                      <div class="form-group">
+                        <label for="proyectosDescripcion" class="col-form-label">Descripción del proyecto</label>
                         <input type="text" class="form-control" placeholder="Ingrese descripción del proyecto"
                           name="descripcionProyecto" [(ngModel)]="proyecto.descripcionProyecto"
                           id="proyectosDescripcion">
                       </div>
                       <div class="form-group">
-                        <label for="proyectosUrl" class="col-form-label">Ingrese URL del proyecto</label>
+                        <label for="proyectosUrl" class="col-form-label">URL del proyecto</label>
                         <input type="text" class="form-control" placeholder="Ingrese URL del proyecto"
                           name="urlProyecto" [(ngModel)]="proyecto.urlProyecto" id="urlProyecto">
                       </div>
                       <div class="form-group">
-                        <label for="proyectosImagen" class="col-form-label">Ingrese nombre completo del archivo
-                          iamgen</label>
-                        <input type="text" class="form-control" placeholder="Ingrese nombre completo del archivo iamgen"
+                        <label for="proyectosImagen" class="col-form-label">Imagen - Ingrese la URL de la imagen</label>
+                        <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen"
                           name="imagenProyecto" [(ngModel)]="proyecto.imagenProyecto" id="proyectosLogo">
                       </div>
-                      <app-file-uploader></app-file-uploader>
+                      <!-- <app-file-uploader></app-file-uploader> -->
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -121,15 +131,16 @@
             </div>
 
 
-            <svg *ngIf="user$ | async as user" type="button" (click)="deleteProy(proyecto)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-              fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <svg *ngIf="user$ | async as user" type="button" (click)="deleteProy(proyecto)"
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
+              viewBox="0 0 16 16">
               <path
                 d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
             </svg>
           </div>
         </div>
         <div class="col-3" id="imagen">
-          <a [href]="proyecto.urlProyecto"><img [src]="urlImagen + proyecto.imagenProyecto"></a>
+          <a [href]="proyecto.urlProyecto"><img [src]="proyecto.imagenProyecto"></a>
         </div>
       </li>
     </ul>

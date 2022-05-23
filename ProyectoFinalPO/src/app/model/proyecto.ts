@@ -4,4 +4,5 @@ export class Proyecto {
     descripcionProyecto!: string;
     imagenProyecto!: string;
     urlProyecto!: string;
+    fecha!: number;
 }

@@ -1,14 +1,9 @@
 <div class="row">
-    <img *ngIf="user$ | async as user, else editBanner" type="button" [src]="urlImagen + personasList[0].banner" data-bs-toggle="modal"
+    <img *ngIf="user$ | async as user, else editBanner" type="button" [src]="personasList[0].banner" data-bs-toggle="modal"
     (click)="onEdit(personasList[0])" [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id"
     id="banner">
-    <!-- <button  class="btn btn-secondary col-12" data-bs-toggle="modal"
-        (click)="onEdit(personasList[0])" [attr.data-bs-target]="'#editarPersoBannerModal-' + personasList[0].id"
-        id="banner"> Editar foto de
-        portada
-    </button> -->
     <ng-template #editBanner>
-        <img [src]="urlImagen + personasList[0].banner" id="banner">
+        <img [src]="personasList[0].banner" id="banner">
     </ng-template>
 
     <!-- Editar Banner Modal -->
@@ -25,11 +20,10 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="personaHabilidad" class="col-form-label">Ingrese el nombre completo del
-                                archivo</label>
-                            <input type="text" class="form-control" placeholder="Seleccione imagen" name="personaBanner"
+                            <label for="personaHabilidad" class="col-form-label">Banner - Ingrese URL de la imagen</label>
+                            <input type="text" class="form-control" placeholder="Ingrese URL de la imagen" name="personaBanner"
                                 [(ngModel)]="personasList[0].banner" id="personaBanner">
-                            <app-file-uploader></app-file-uploader>
+                            <!-- <app-file-uploader></app-file-uploader> -->
                         </div>
                     </form>
                 </div>

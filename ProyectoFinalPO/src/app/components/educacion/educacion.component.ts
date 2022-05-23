@@ -17,10 +17,7 @@ export class EducacionComponent implements OnInit {
   educacionList: any;
 
   public user$: Observable<any> = this.authServ.fireAuth.user;
-
-
-  urlImagen: string = "http://localhost:8080/portfolio/files/"
-
+  
   constructor(private educacionService: EducacionServService, private authServ: LoginServService) { }
 
   ngOnInit(): void {

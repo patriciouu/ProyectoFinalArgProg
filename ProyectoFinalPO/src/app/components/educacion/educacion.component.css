@@ -33,3 +33,8 @@ svg{
     display: flex;
     align-items: center;
 }
+
+.periodo{
+    display: flex;
+    justify-items: right;
+}
