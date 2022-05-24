@@ -11,7 +11,7 @@ firebase.initializeApp(environment.firebase)
 })
 export class FileUploaderServService {
 
-  private urlUploads: string = "https://quiet-reaches-10167.herokuapp.com/portfolio"
+  private urlUploads: string = "https://salty-caverns-78118.herokuapp.com/portfolio"
 
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { Proyecto } from '../model/proyecto';
 })
 export class ProyectoServService {
 
-  private urlProyecto: string = "https://quiet-reaches-10167.herokuapp.com/portfolio/proyectos"
+  private urlProyecto: string = "https://salty-caverns-78118.herokuapp.com/portfolio/proyectos"
 
   constructor(private http: HttpClient) {  }
 

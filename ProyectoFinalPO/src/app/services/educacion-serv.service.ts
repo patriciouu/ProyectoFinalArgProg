@@ -10,7 +10,7 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionServService {
 
-  private urlEducacion = "https://quiet-reaches-10167.herokuapp.com/portfolio/educacion"
+  private urlEducacion = "https://salty-caverns-78118.herokuapp.com/portfolio/educacion"
 
   constructor(private http: HttpClient) { }
 
