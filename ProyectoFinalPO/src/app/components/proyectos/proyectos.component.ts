@@ -37,7 +37,6 @@ export class ProyectosComponent implements OnInit {
   }
 
   onEdit(proyecto:Proyecto){
-    console.log(proyecto);
   }
 
   editProy(proyecto: Proyecto){

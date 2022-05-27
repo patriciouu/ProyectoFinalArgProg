@@ -28,11 +28,9 @@ export class PortadaComponent implements OnInit {
 
   onEdit(persona: Persona){
     const perso = persona;
-    console.log(persona);
   }
   
   editPerso(persona: Persona){
-    console.log(persona)
     this.personaService.editPersona(persona.id, persona).subscribe(
       data => this.personaService.returnPersonas().subscribe(
         response => this.personasList = response

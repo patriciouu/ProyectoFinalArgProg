@@ -32,7 +32,6 @@ export class PrincipalComponent implements OnInit {
 
   onEdit(persona: Persona){
     const perso = persona;
-    console.log(persona);
   }
   
   editPerso(persona: Persona){

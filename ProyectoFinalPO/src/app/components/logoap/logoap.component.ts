@@ -28,11 +28,6 @@ export class LogoapComponent implements OnInit {
     this.redService.returnRedes().subscribe(
       data => this.redesList = data
     );
-    
-    // const user = await this.authServ.getCurrentUser();
-    // if (user) {
-    //   console.log('User->', user);
-    // }
   }
 
   onEdit(red: RedSocial) {

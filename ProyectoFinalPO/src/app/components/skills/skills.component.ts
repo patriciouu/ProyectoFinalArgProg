@@ -34,7 +34,6 @@ export class SkillsComponent implements OnInit {
   }
 
   onEdit(skill: Skill){
-    console.log(skill);
   }
 
   editSki(skill: Skill){
