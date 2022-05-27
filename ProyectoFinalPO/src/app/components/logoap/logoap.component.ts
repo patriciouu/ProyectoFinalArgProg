@@ -32,7 +32,6 @@ export class LogoapComponent implements OnInit {
 
   onEdit(red: RedSocial) {
     const redSoc = red;
-    return console.log(red)
   }
 
   editRed(red: RedSocial) {

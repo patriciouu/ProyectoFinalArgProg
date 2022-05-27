@@ -35,11 +35,9 @@ export class EducacionComponent implements OnInit {
 
   onEdit(educacion: Educacion){
     const edu = educacion;
-    console.log(edu);
   }
 
   editEdu(educacion:Educacion):void{
-    console.log(educacion);
     this.educacionService.editEducacion(educacion.educacionId, educacion).subscribe(
       data => this.educacionService.returnEducacion().subscribe(
         response => this.educacionList = response

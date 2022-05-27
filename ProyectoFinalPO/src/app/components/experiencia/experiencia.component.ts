@@ -27,7 +27,6 @@ export class ExperienciaComponent implements OnInit {
   }
 
   createExp(): void {
-    console.log(this.experiencia);
     this.experienciaService.createExperiencia(this.experiencia).subscribe(
       data => this.experienciaService.returnExperiencias().subscribe(
         response => this.experienciaList = response
@@ -37,11 +36,9 @@ export class ExperienciaComponent implements OnInit {
 
   onEdit(experiencia:Experiencia): void{
     const exp = experiencia;
-    console.log(exp);
   }
 
   editExp(experiencia: Experiencia): void {
-    console.log(experiencia);
     this.experienciaService.editExperiencia(experiencia.idExperiencia, experiencia).subscribe(
       data => this.experienciaService.returnExperiencias().subscribe(
         response => this.experienciaList = response
@@ -50,7 +47,6 @@ export class ExperienciaComponent implements OnInit {
   }
 
   eliminarExp(experiencia: Experiencia): void {
-    console.log(experiencia)
     this.experienciaService.deleteExperiencia(experiencia.idExperiencia).subscribe(
       data => this.experienciaService.returnExperiencias().subscribe(
         response => this.experienciaList = response
